@@ -1,0 +1,29 @@
+
+Aplicatia lucreaza cu senzori. Un senzor are un nume si o descriere.
+Un senzor de miscare, are in plus, o lungime fixa la care se activeaza (daca un obiect ajunge mai aproape de senzor decat acea lungime fixa, senzorul se va activa)
+Un senzor de fum, are in plus, un volum fix la care se activeaza (daca senzorul detecteaza un volum de fum peste acel volum fix, se va activa)
+Senzorii primesc date constant cu volumul si lungimea curenta, care sunt setate prin setteri.
+Un SensorSystem (sistem centralizat de senzori) va contine o lista cu toti senzorii din casa.
+Foloseste pattern-ul Observer, astfel incat de fiecare data cand sistemul de senzori central primeste o modificare la unul din senzori, sa se afiseze un mesaj,
+daca senzorul detecteza miscare sau fum.
+Foloseste si pattern-ul Singleton, prin care sa implementezi un Logger care afiseaza informatii utile pa parcursul programului (adica atunci cand senzorii detecteaza miscare sau fum).
+
+
+in main o sa trimit cate un update pentru senzori in care sa specific distanta si cantitatea de fun
+fiecare senzor o sa verifice daca este depasit tresholdul
+daca este se detecteaza ca thresholdul este depasit atunci sa trimita o alerta
+
+o sa avem SensoreSistem care sa:
+- aibe o lista de senzori
+- sa se poata adauga sensori
+- sa se poata sterge sensori
+- sa le le ceara status la senzorii
+    - daca la un sesor are nivelul depasit sa trimita un mesaj in care se specifica ca sensorul x a detectat cevca
+    - mai multi sensori pot sa trimita mesaje deodata
+    - daca nu s-a detectat nici o alartma o sa se specifice acest lucru
+
+O sa avem cate un sensor
+-o sa aiba nume, descriere, nivel de detectie, valoarea detectata
+- o sa aiba o metoda starea senzorului in care se verifica daca nivelul de detectie este depasit
+- sa fie getari si seteri
+- daca in urma schimbari de valoare thresholdul este depasit sa se afiseze o alerta.
